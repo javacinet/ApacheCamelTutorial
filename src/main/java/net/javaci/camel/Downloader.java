@@ -6,9 +6,9 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Download {
+public class Downloader {
 
-    private static final Logger logger = LogManager.getLogger(Download.class);
+    private static final Logger logger = LogManager.getLogger(Downloader.class);
 
     public void start() throws Exception {
         CamelContext context = new DefaultCamelContext();
@@ -18,7 +18,7 @@ public class Download {
             @Override
             public void configure() throws Exception {
 
-                // Download the file via FTP and save it to the "data/input" directory
+                // Downloader the file via FTP and save it to the "data/input" directory
                 from("ftp://ftp.ncdc.noaa.gov/pub/data/noaa?fileName=isd-history.csv&passiveMode=true")
                         .process(exchange -> {
                             logger.info("Starting FTP download of isd-history.csv");
@@ -43,7 +43,7 @@ public class Download {
     }
 
     public static void main(String[] args) throws Exception {
-        Download download = new Download();
+        Downloader download = new Downloader();
         download.start();
     }
 }

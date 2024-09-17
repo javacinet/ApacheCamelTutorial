@@ -9,11 +9,11 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Instantiate and start the download process
-            Download download = new Download();
+            Downloader download = new Downloader();
             download.start();
 
             // Instantiate and start the processing of the downloaded file
-            Processing processing = new Processing();
+            Processor processing = new Processor();
             processing.start();
 
             // Log a message when the entire process has completed

@@ -6,9 +6,9 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Processing {
+public class Processor {
 
-    private static final Logger logger = LogManager.getLogger(Processing.class);
+    private static final Logger logger = LogManager.getLogger(Processor.class);
 
     public void start() throws Exception {
         CamelContext context = new DefaultCamelContext();
@@ -64,7 +64,7 @@ public class Processing {
     }
 
     public static void main(String[] args) throws Exception {
-        Processing processing = new Processing();
+        Processor processing = new Processor();
         processing.start();
     }
 }
